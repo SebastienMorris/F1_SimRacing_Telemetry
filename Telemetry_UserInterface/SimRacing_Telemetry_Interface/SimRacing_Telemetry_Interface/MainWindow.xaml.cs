@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace SimRacing_Telemetry_Interface;
 
 /// <summary>
@@ -19,5 +20,6 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        PythonHandler.RunPythonFunction("main", "say_hello");
     }
 }
