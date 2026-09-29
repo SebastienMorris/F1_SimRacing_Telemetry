@@ -11,7 +11,10 @@ def say_hello():
 
 
 def start_server() -> int:
-    F1server.start_server()
+    try:
+        F1server.start_server()
+    except:
+        return 1
     return 0
 
 
