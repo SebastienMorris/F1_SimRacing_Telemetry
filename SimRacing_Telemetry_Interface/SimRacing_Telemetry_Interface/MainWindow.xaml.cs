@@ -20,6 +20,10 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        PythonHandler.RunPythonFunction("main", "say_hello");
+        PythonHandler.Run_SayHello();
+        PythonHandler.Run_GetServerAddress();
+        PythonHandler.Run_StartServer();
+        PythonHandler.Run_GetServerAddress();
+        PythonHandler.Run_StopServer();
     }
 }
