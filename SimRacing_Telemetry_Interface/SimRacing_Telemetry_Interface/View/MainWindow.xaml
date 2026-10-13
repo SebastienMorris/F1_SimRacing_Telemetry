@@ -1,0 +1,41 @@
+﻿<Window x:Class="SimRacing_Telemetry_Interface.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimRacing_Telemetry_Interface.View"
+        xmlns:userControls="clr-namespace:SimRacing_Telemetry_Interface.View.UserControls"
+        xmlns:detailsPanel="clr-namespace:SimRacing_Telemetry_Interface.View.UserControls.DetailsPanel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition> 
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <userControls:MenuBar />
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                
+                <userControls:ViewportToolbar/>
+                <Rectangle Grid.Row="1" Fill="DarkRed" />
+            </Grid>
+            
+            <detailsPanel:DataDetails Grid.Column="1" />
+        </Grid>
+        
+        
+    </Grid>
+</Window>
