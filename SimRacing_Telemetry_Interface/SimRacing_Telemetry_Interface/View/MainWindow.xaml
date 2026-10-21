@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimRacing_Telemetry_Interface.View"
         xmlns:userControls="clr-namespace:SimRacing_Telemetry_Interface.View.UserControls"
-        xmlns:detailsPanel="clr-namespace:SimRacing_Telemetry_Interface.View.UserControls.DetailsPanel"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
@@ -33,7 +32,7 @@
                 <Rectangle Grid.Row="1" Fill="DarkRed" />
             </Grid>
             
-            <detailsPanel:DataDetails Grid.Column="1" />
+            <userControls:DataDetailsPanel Grid.Column="1" />
         </Grid>
         
         

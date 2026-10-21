@@ -28,3 +28,10 @@ def stop_server() -> int:
 
 def get_server_address() -> tuple[str, int]:
     return F1server.get_server_address()
+
+def get_data_from_type(type : string) -> dict[string, string]:
+    data : dict[string, string] = {
+        "laptime" : "01:10:100",
+        "overtakes" : "20",
+        "position" : "1"}
+    return data;

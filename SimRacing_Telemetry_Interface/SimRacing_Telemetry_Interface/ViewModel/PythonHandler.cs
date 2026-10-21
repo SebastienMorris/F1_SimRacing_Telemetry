@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection.Metadata;
 using Python.Runtime;
 
 namespace SimRacing_Telemetry_Interface.ViewModel;
@@ -71,5 +72,22 @@ static class PythonHandler
         PyTuple addressTuple = result.As<PyTuple>();
 
         return (addressTuple[0].As<string>(), addressTuple[1].As<int>());
+    }
+
+    public static Dictionary<string, string> Run_GetDataFromType(string dataType)
+    {
+        Initialise();
+        PyString arg =  new PyString(dataType);
+        var result = RunPythonFunction("get_data_from_type", new PyObject[]{ arg });
+        Console.WriteLine(result);
+
+        PyDict dict = result.As<PyDict>();
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        foreach (PyObject key in dict.Keys())
+        {
+            data.Add(key.As<string>(), dict[key].As<string>());
+        }
+        
+        return data;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
 using SimRacing_Telemetry_Interface.ViewModel;
 
 namespace SimRacing_Telemetry_Interface.View;
@@ -11,7 +13,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-       // PythonHandler.Run_GetServerAddress();
-        //tbHello.Text = PythonHandler.Run_GetServerAddress().Item1;
+        Dictionary<string, string> dict = PythonHandler.Run_GetDataFromType("Type");
+        RaceDataManager.Instance.SelectedData = dict;
     }
 }
