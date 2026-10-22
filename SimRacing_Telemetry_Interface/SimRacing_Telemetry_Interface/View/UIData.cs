@@ -3,18 +3,18 @@ using System.Runtime.CompilerServices;
 
 namespace SimRacing_Telemetry_Interface.ViewModel;
 
-public class UIDataManager : INotifyPropertyChanged
+public class UIData : INotifyPropertyChanged
 {
-    private UIDataManager() {}
+    private UIData() {}
     
-    private static UIDataManager _instance;
-    public static UIDataManager Instance
+    private static UIData _instance;
+    public static UIData Instance
     {
         get
         {
             if (_instance == null)
             {
-                _instance = new UIDataManager();
+                _instance = new UIData();
             }
             return _instance;
         }

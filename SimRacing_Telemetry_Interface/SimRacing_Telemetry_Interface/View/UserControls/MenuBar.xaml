@@ -13,9 +13,10 @@
                 <MenuItem Header="Restart Server" FontSize="12"/>
             </MenuItem>   
             
-            <MenuItem Header="Data Files" FontSize="14">
+            <MenuItem Header="Race Files" FontSize="14">
                 <MenuItem Header="Save Current" FontSize="12" />
                 <MenuItem Header="Load File" FontSize="12" />
+                <MenuItem Header="Load Current" FontSize="12" />
             </MenuItem>
         </Menu>
     </Grid>

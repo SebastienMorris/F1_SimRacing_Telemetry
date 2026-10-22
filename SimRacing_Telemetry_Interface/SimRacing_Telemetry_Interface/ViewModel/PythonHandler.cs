@@ -74,20 +74,27 @@ static class PythonHandler
         return (addressTuple[0].As<string>(), addressTuple[1].As<int>());
     }
 
-    public static Dictionary<string, string> Run_GetDataFromType(string dataType)
+    public static Dictionary<string, Dictionary<string, string>> Run_GetRaceData(string raceFilename)
     {
         Initialise();
-        PyString arg =  new PyString(dataType);
-        var result = RunPythonFunction("get_data_from_type", new PyObject[]{ arg });
+        PyString arg =  new PyString(raceFilename);
+        var result = RunPythonFunction("get_race_data", new PyObject[]{ arg });
         Console.WriteLine(result);
 
-        PyDict dict = result.As<PyDict>();
-        Dictionary<string, string> data = new Dictionary<string, string>();
-        foreach (PyObject key in dict.Keys())
+        PyDict raceDict = result.As<PyDict>();
+        Dictionary<string, Dictionary<string, string>> raceData = new Dictionary<string, Dictionary<string, string>>();
+        foreach (PyObject key in raceDict.Keys())
         {
-            data.Add(key.As<string>(), dict[key].As<string>());
+            PyDict typesDict = raceDict[key].As<PyDict>();
+            Dictionary<string, string> typeData = new Dictionary<string, string>();
+            foreach (PyObject typeKey in typesDict)
+            {
+                typeData.Add(typeKey.As<string>(), typesDict[typeKey].As<string>());    
+            }
+            
+            raceData.Add(key.As<string>(), typeData);
         }
         
-        return data;
+        return raceData;
     }
 }

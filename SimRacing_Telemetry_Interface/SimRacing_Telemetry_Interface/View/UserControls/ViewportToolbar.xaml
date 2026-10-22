@@ -4,14 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SimRacing_Telemetry_Interface.View.UserControls"
+             xmlns:viewmodel="clr-namespace:SimRacing_Telemetry_Interface.ViewModel"
              mc:Ignorable="d"
-             Height="30" d:DesignWidth="800">
+             Height="30" d:DesignWidth="800" d:DataContext="{d:DesignInstance Type=viewmodel:RaceDataManager}" >
     <Grid>
         <Menu Background="White">
-            <MenuItem Header="Data Filters" FontSize="16">
-                <MenuItem Header="Lap Overview" FontSize="12"/>
-                <MenuItem Header="Braking points" FontSize="12"/>
-            </MenuItem>   
+            <MenuItem Header="Data Filters" FontSize="16" ItemsSource="{ Binding RaceData.Keys }" />   
         </Menu>
     </Grid>
 </UserControl>

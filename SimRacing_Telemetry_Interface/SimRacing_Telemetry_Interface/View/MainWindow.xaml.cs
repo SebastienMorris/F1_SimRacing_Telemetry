@@ -13,7 +13,10 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        Dictionary<string, string> dict = PythonHandler.Run_GetDataFromType("Type");
-        RaceDataManager.Instance.SelectedData = dict;
+        Dictionary<string, Dictionary<string, string>> dict = PythonHandler.Run_GetRaceData("Silverstone");
+        RaceDataManager.Instance.RaceData = dict;
+        
+        //testing data filter selection
+        RaceDataManager.Instance.SelectedDataId = "Lap";
     }
 }

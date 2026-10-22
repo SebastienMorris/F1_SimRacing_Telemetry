@@ -29,9 +29,18 @@ def stop_server() -> int:
 def get_server_address() -> tuple[str, int]:
     return F1server.get_server_address()
 
-def get_data_from_type(type : string) -> dict[string, string]:
-    data : dict[string, string] = {
-        "laptime" : "01:10:100",
-        "overtakes" : "20",
-        "position" : "1"}
+def get_race_data(raceName : string) -> dict[string, dict[string, string]]:
+    data : dict[string, dict[string, string]] = {
+        "Lap" : {
+            "laptime" : "01:10:100",
+            "current position" : "5",
+            "tyre compound" : "Hard",
+            "tyre age" : "10"
+        },
+        "Result" : {
+            "final position" : "1",
+            "total overtakes" : "20",
+            "number of stops" : "2"
+        }
+    }
     return data;
