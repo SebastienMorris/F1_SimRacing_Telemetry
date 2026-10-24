@@ -27,7 +27,7 @@ public class RaceDataManager : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
     
-    private Dictionary<string, Dictionary<string, string>> _raceData;
+    private Dictionary<string, Dictionary<string, string>> _raceData = new Dictionary<string, Dictionary<string, string>>();
     public Dictionary<string, Dictionary<string, string>> RaceData
     {
         get { return Instance._raceData; }
@@ -41,7 +41,7 @@ public class RaceDataManager : INotifyPropertyChanged
         set {  Instance._selectedData = value; OnPropertyChanged(); }
     }
 
-    private string _selectedDataId;
+    private string _selectedDataId = "";
     public string SelectedDataId
     {
         get { return Instance._selectedDataId;  }

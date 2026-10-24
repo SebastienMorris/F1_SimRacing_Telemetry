@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SimRacing_Telemetry_Interface.ViewModel;
+namespace SimRacing_Telemetry_Interface.View;
 
 public class UIData : INotifyPropertyChanged
 {
     private UIData() {}
     
-    private static UIData _instance;
+    private static UIData? _instance;
     public static UIData Instance
     {
         get
